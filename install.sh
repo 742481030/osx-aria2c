@@ -131,4 +131,34 @@ bt-save-metadata=true
 
 EOF
 
+
+cat<<EOF ~/Library/LaunchAgents/com.aria2c.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.cn.aria2c</string>
+    <key>Program</key>
+    <string>/usr/local/bin/aria2c</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/aria2c</string>
+        <string>--conf-path</string>
+        <string>${patth}/.aria2/aria2.conf</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>
+
+EOF
+echo "配置开机启动"
+ launchctl load -w ~/Library/LaunchAgents/com.aria2c.plist
+
+
+
 say "安装成功"
