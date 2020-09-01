@@ -9,7 +9,8 @@ cd ~
 ls
 mkdir .aria2
 touch /Applications/aria2c/aria2c.session && echo "创建session成功"
-rm ~/.aria2/aria2.conf
+
+
 
 cat<<EOF >~/.aria2/aria2.conf
 ## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
@@ -157,6 +158,8 @@ cat<<EOF ~/Library/LaunchAgents/com.aria2c.plist
 
 EOF
 echo "配置开机启动"
+cd ~/Library/LaunchAgents/
+ls
  launchctl load -w ~/Library/LaunchAgents/com.aria2c.plist
 
 
