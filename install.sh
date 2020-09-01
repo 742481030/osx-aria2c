@@ -132,8 +132,8 @@ bt-save-metadata=true
 
 EOF
 
-
-cat<<EOF ~/Library/LaunchAgents/com.aria2c.plist
+cd ~/Library/LaunchAgents/
+ cat<< EOF >com.aria2c.plist
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
